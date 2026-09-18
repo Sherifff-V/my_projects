@@ -14,3 +14,7 @@ while test_int > 0 do
     end;
 
 println($'{round(test_float, 2)}')
+
+
+for var i := 0 to 4 do
+    print(i)
