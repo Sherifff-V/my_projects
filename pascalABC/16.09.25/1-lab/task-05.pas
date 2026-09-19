@@ -1,4 +1,4 @@
-﻿##
+﻿  ##
 var n := readinteger('Введите число');
 var ans := 0;
 
