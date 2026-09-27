@@ -8,22 +8,22 @@ var ans := 0;
 if n_f_wl = 0 then // случай при n2 = 0
     k := 1;
 
-while n_f_wl > 0 do // цикл разрядов
+while n_f_wl > 0 do
     begin
     n_f_wl := n_f_wl div 10;
     k += 1
     end;
 
 loop k do
-    n1 := n1 * 10; // цикл преобразования n1
+    n1 := n1 * 10;
 
-if n1 < 0 then // преобразование ответа
+if n1 < 0 then
     begin
     ans := (abs(n1) + n2) * -1;
     end
 
 else
-    begin                 // костыль проверка - исправить надо
+    begin
     ans := (abs(n1) + n2);
     end;
 
