@@ -14,4 +14,5 @@ while abs(num) > eps do
       sum += num
     end;
 
+assert(abs(sum - sin(x)) <= eps * 2); 
 println('sum:', sum, 'sin:', sin(x))
