@@ -1,5 +1,6 @@
 ##
 var n := readinteger('Введите n:');
+assert(n >= 0, 'N >= 0');
 var num : integer;
 var num_mod : integer;
 var num_max := 0;
@@ -7,7 +8,8 @@ var num_min := integer.maxvalue;
 
 loop n do
     begin
-      num := readinteger($'{#10}Введите число:');
+      num := abs(readinteger($'{#10}Введите число:')); //Ну в условии же ничего не сказано про отрицательные числа))
+      if num = 0 then num_min := 0;
       while num > 0 do
         begin
           num_mod := num mod 10;
