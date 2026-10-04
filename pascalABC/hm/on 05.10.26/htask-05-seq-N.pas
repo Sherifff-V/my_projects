@@ -1,6 +1,6 @@
 ##
-var n := readinteger('n:');
-assert(n >= 0);
+var n := readinteger('Введите n:');
+assert(n >= 0, 'N >= 0!');
 var k := 0;
 var sum := 0.0;
 var real_num : real;
@@ -9,14 +9,49 @@ var num_ost : real;
 for var i := 1 to n do
     begin
       k += 1;
-      real_num := readreal();
-      num_ost := real_num;
-      while num_ost >= 1 do 
+      real_num := readreal($'{#10}{k}-е число:');
+      assert(real_num > 0, 'Число > 0');
       
-        num_ost -= 1.0;
+      num_ost := real_num;
+      while num_ost >= 1 do
+        begin
+          num_ost -= 1.0;
+        end;
       real_num -= num_ost;
-      print($'{#10}{k} число: {real_num}');
+      
+      print($'(целая часть - {real_num})');
       sum += real_num
     end;
 
-print($'{#10}Сумма: {sum}');
+print($'{#10}Сумма: {sum}')
+
+
+{
+Введите n: 4
+
+1-е число: 56
+(целая часть - 56) 
+2-е число: 234.56
+(целая часть - 234) 
+3-е число: 123.1
+(целая часть - 123) 
+4-е число: 345.9
+(целая часть - 345) 
+Сумма: 758
+
+Введите n: 6
+
+1-е число: 4.6
+(целая часть - 4) 
+2-е число: 3.5
+(целая часть - 3) 
+3-е число: 2.7
+(целая часть - 2) 
+4-е число: 4.4
+(целая часть - 4) 
+5-е число: 6.0
+(целая часть - 6) 
+6-е число: 7.3
+(целая часть - 7) 
+Сумма: 26
+}
