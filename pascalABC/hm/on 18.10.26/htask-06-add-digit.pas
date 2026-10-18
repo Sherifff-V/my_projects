@@ -21,14 +21,16 @@ begin
   var (d_1, d_2) := readinteger2('Введите числа d1 и d2:');
   
   AddLeftDigit(k, d_1);
+  println(k);
   AddLeftDigit(k, d_2);
-  println('Ответ:', k)
+  println(k)
 end.
 
 {
 
 Введите число k: 234
 Введите числа d1 и d2: 5 3
-Ответ: 35234
+5234
+35234
 
 }
