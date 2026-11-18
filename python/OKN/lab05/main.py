@@ -1,14 +1,12 @@
-from tablestats import read_rows, count_types, total_minutes, to_csv
+from python.OKN.lab05.tablestats import read_rows, count_types, total_minutes, to_csv
 
 
 def main():
     path = input().strip()
-
-    with open(path, encoding="utf-8") as table:
-        rows = read_rows(table)
+    with open(path, encoding="utf-8") as f:
+        rows = read_rows(f)
 
     counts = count_types(rows)
-
     print(len(rows))
     print(len(counts))
     print(total_minutes(rows, "ошибка"))
