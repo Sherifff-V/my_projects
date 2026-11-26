@@ -1,0 +1,92 @@
+{
+  "$defs": {
+    "LampItem": {
+      "additionalProperties": false,
+      "properties": {
+        "model": {
+          "enum": [
+            "office",
+            "reading",
+            "decorative"
+          ],
+          "title": "Model",
+          "type": "string"
+        },
+        "temperature_k": {
+          "enum": [
+            2700,
+            4000,
+            6500
+          ],
+          "title": "Temperature K",
+          "type": "integer"
+        },
+        "brightness_lm": {
+          "enum": [
+            400,
+            800,
+            1200
+          ],
+          "title": "Brightness Lm",
+          "type": "integer"
+        },
+        "color": {
+          "enum": [
+            "black",
+            "white",
+            "gray"
+          ],
+          "title": "Color",
+          "type": "string"
+        },
+        "quantity": {
+          "maximum": 10,
+          "minimum": 1,
+          "title": "Quantity",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "model",
+        "temperature_k",
+        "brightness_lm",
+        "color",
+        "quantity"
+      ],
+      "title": "LampItem",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "items": {
+      "items": {
+        "$ref": "#/$defs/LampItem"
+      },
+      "title": "Items",
+      "type": "array"
+    },
+    "needs_clarification": {
+      "title": "Needs Clarification",
+      "type": "boolean"
+    },
+    "clarification_question": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Clarification Question"
+    }
+  },
+  "required": [
+    "items",
+    "needs_clarification",
+    "clarification_question"
+  ],
+  "title": "OrderExtraction",
+  "type": "object"
+}
